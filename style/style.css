@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fonts/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    --color0: #d9e3ec;
+    --color1: #D7EFFE;
+    --color2: #55a5c7;
+    --color3: #3B768F;
+    --color4: #264C5C;
+    --color5: #093c52;
+    --colordroid: #94f8c8;
+    --colordroidcl: #c7ffe4;
+    --colordroidsc: #0e8054;
+
+    --standard_font: Arial, Verdana, Helvetica, sans-serif;
+    --featured_font: 'Bebas Neue', sans-serif;;
+    --android_font: 'Android', sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--color0);
+    font-family: var(--standard_font);
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--colordroidsc), var(--color5));
+    min-height: 150px;/*O Header não pode ser menor do que 150px caso a resolução aumente muito*/ 
+    padding-top: 40px;
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--featured_font);
+    font-weight: normal;
+    font-size: 3.0em;
+    padding: 0px 10px 20px 10px;
+    text-align: center;
+    text-shadow: 1px 2px #00000080;
+}
+
+header > p {
+    color: white;
+    font-size: 1.2em;
+    max-width: 500px;/*Quebrar o texto*/
+    margin: auto;/*Parágrafo é uma caixa*/
+    text-align: center;
+    padding: 0px 10px 20px 10px;
+    text-shadow: 1px 1px #00000080;
+}
+
+nav {
+    background-color: var(--color5);
+    padding: 0px 10px 10px 10px;
+    box-shadow: 0px 7px 10px #0000004b;
+}
+
+nav > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+}
+
+nav > a:hover {
+    background-color: var(--colordroidcl);
+    color: var(--color5);
+    transition-duration: 0.5s;/*Ao passar mouse em cima, demora x segundos de transição*/
+}
+
+main {
+    max-width: 1000px;/*funciona bem em uma tela grande*/
+    min-width: 250px;/*funciona bem em uma tela pequena*/
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px #00000080;
+}
+
+main h1 {
+    color: var(--color5);
+    font-family: var(--android_font);
+    font-size: 2em;
+    font-weight: normal;
+}
+
+main h2 {
+    color: var(--color4);
+    font-family: var(--android_font);
+    background-image: linear-gradient(to right, var(--colordroidcl), white);
+    font-weight: normal;
+    padding: 5px 10px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+main p {
+    text-align: justify;
+    margin: 15px 0px;
+    text-indent: 30px;
+    line-height: 1.5em;/*Espaçamento entre linhas*/
+}
+
+main strong {
+    color: var(--colordroidsc);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color5);
+    background-color: var(--color0);
+    padding: 1px 5px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--color3);
+}
+
+main img {
+    width: 100%;/*Para não cortar imagens*/
+}
+
+main img.pequena {
+    max-width: 400px;
+    display: block;/*Uma imagem por padrão não é um bloco então o margin:auto não funcionaria*/
+    margin: auto;
+}
+
+div.video {
+    background-color: var(--color5);
+    margin: 0px -20px 30px -20px;/*Padding do main*/
+    padding: 10px 10px;
+    position: relative;
+    padding-bottom: 57.5%;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+a.externo::after {
+    content: '\1F517';/*Código do emoji*/
+}
+
+aside {
+    background-color: var(--colordroidcl);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+aside > h3 {
+    background-color: var(--color4);
+    color: white;
+    font-size: 1.2em;
+    font-weight: normal;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;/*Margem negativa pois já tem um padding no aside*/
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 1px 2px #00000080;
+}
+
+aside > ul {
+    /*Não compatível com todo navegador*/
+    list-style-position: inside;/*O padrão é outside*/
+    columns: 2;
+    list-style-type: '\2714\00A0';/*Troca bolinha, 00A0 é espaço sem quebra*/
+}
+
+footer {
+    background-color: var(--color5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
